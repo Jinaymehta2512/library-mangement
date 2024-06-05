@@ -1,0 +1,115 @@
+
+<html>
+    <head>
+        <style>
+            body{
+                background-image: linear-gradient(red,blue,orange,green,violet);
+            }
+           form{
+            font-size: x-large;
+            color: azure;
+            width: 40%;
+            height: 40%;
+            
+           }
+            input[type=submit]{
+                background-color:yellow;
+                color: red;
+                font-size: x-large;
+            }
+            input[type=reset]{
+                background-color:yellow;
+                color: red;
+                font-size: x-large;
+            }
+        </style>
+    </head>
+    <body align="center">
+        <h1 style="color:orange;">MEMBERSHIP FORM</h1>
+            <form onsubmit="fun()" style="color:black ;margin-left: 30%;" align="center" >
+                <fieldset>
+                <label>name<input type="text"id="p1"></label><br>
+                <label>Password:<input type="password" id="p2"></label><br>
+                <label>Email-id<input type="email" id="p3"></label><br>
+                <label>Mobile no:<input type="text" id="p4"></label><br><br>
+                <label>MEMBERSHIP==<input type="radio" name="x" checked/> SILVER<input type="radio" 
+name="x"/>GOLD <input type="radio" name="x"/>premium</label><br><br>
+                
+                <input type="submit">
+                <input type="reset"><br>
+            </fieldset>
+            </form>
+        
+        
+        <script type="text/javascript">
+            function fun()
+            {
+                pat=/\W/
+                obj=document.getElementById("p1").value;
+                obj1=obj.length;
+                if(pat.test(obj))
+                {
+                    alert("Username should not have any special character");
+                }
+                else
+                {
+                    if(obj1>=8)
+                    {
+                        alert("Username Perfect");
+                    }
+                    else
+                    {
+                        alert("Uname len not perfect");
+                    }
+                }
+                pat1=/[0-9]*\W/
+                obj2=document.getElementById("p2").value;
+                obj3=obj2.length;
+                
+                    if (obj3>=8 && obj3<=12)
+                    {
+                        if(pat1.test(obj2))
+                        {
+                            alert("Password Perfect")
+                        }
+                        else
+                        {
+                            alert("Password not perfect");
+                        }
+                    }
+                    
+                
+                else
+                {
+                    alert("Password length not perfect");
+                }
+                pat2=/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                obj4=document.getElementById("p3").value;
+                obj5=obj4.length
+                if(pat2.test(obj4))
+                {
+                    alert("Email id perfect")
+                }
+                else
+                {
+                    alert("Email id not perfect")
+                }
+                pat3=/^\d{10}$/
+                obj6=document.getElementById("p4").value;
+                obj7=obj6.length;
+                if(pat3.test(obj6))
+                {
+                    alert("Mobile Number perfect")
+                }
+                else
+                {
+                    alert("Mobile Number not perfect")
+                }
+                if(obj1==0 || obj3==0 || obj5==0 ||obj7==0)
+                {
+                    alert("Please enter some data")
+                }
+            }
+        </script>
+    </body>
+</html>
